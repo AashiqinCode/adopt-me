@@ -1,23 +1,11 @@
-// Your script goes here.....
+import React from 'react';
+import {
+    render
+} from 'react-dom';
 
-// A function component
-
-const Pet = (props) => {
-    // Destructuring the props
-    const {
-        name,
-        animal,
-        breed
-    } = props;
-
-    // Always maintain a div at the root of the element
-    return React.createElement("div", {}, [
-        React.createElement("h1", null, name),
-        React.createElement("h2", {}, animal),
-        React.createElement("h2", {}, breed),
-    ]);
-};
-
+import
+Pet
+from './Pet';
 const App = () => {
     // throw new Error("lol");
     return React.createElement(
@@ -45,5 +33,4 @@ const App = () => {
         ]
     );
 };
-
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
