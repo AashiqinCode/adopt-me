@@ -16,6 +16,7 @@
   },
 
   "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaOptions": 2018,
     "sourceType": "module",
