@@ -3,6 +3,8 @@ import { render } from "react-dom";
 
 // import Pet from "./Pet.jsx";
 import SearchParams from "./SearchParams";
+import { Router, Link } from "@reach/router";
+import Details from "./Details";
 
 const App = () => {
   // throw new Error("lol");
@@ -35,12 +37,14 @@ const App = () => {
   return (
     <React.StrictMode>
       <div>
-        <h1> Adopt Me! </h1>
-        {/* <Pet name="Luna" animal="Dog" breed="Havanese" />
-      <Pet name="Pepper" animal="Bird" breed="Cockatiel" />
-      <Pet name="Doink" animal="Cat" breed="Mix" /> */}
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
 
-        <SearchParams />
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
       </div>
     </React.StrictMode>
   );
