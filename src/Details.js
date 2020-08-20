@@ -3,24 +3,21 @@ import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
 import ErrorBoundaries from "./ErrorBoundaries";
 import ThemeContext from "./ThemeContext";
-
-// const Details = (props) => {
-//   return (
-//     <pre>
-//       <code>{JSON.stringify(props, null, 4)}</code>
-//     </pre>
-//   );
-// };
+import Modal from "./Modal";
+import { navigate } from "@reach/router";
 class Details extends React.Component {
-  state = { loading: true };
+  state = {
+    loading: true,
+    showModal: false,
+  };
 
   //ComponentDidMount is like useEffect,used for Data fetching while use API's
   componentDidMount() {
     // throw new Error("lol new");
-
     pet.animal(this.props.id).then(({ animal }) => {
       console.log("The Clicked Animal: ", animal),
         this.setState({
+          url: animal.url,
           name: animal.name,
           animal: animal.type,
           location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
@@ -32,25 +29,55 @@ class Details extends React.Component {
     }),
       console.error;
   }
+
+  toggleModal = () => this.setState({ showModal: !this.state.showModal }); // true/false
+
+  // Can be done with 'redirect' as well
+  adopt = () => navigate(this.state.url);
   render() {
     if (this.state.loading) {
-      return <h1>loading..</h1>;
+      return <h1> loading.. </h1>;
     }
 
-    const { animal, breed, location, description, name, media } = this.state;
-    return (
-      <div className="details">
-        <Carousel media={media} />
-        <h1>{name}</h1>
-        <h2>{`${animal} - ${breed} - ${location}`}</h2>
+    const {
+      animal,
+      breed,
+      location,
+      description,
+      name,
+      media,
+      showModal,
+    } = this.state;
 
+    return (
+      <div className="details" onClick={console.log}>
+        <Carousel media={media} /> <h1> {name} </h1>{" "}
+        
+        <h2> {`${animal} - ${breed} - ${location}`} </h2>
         <ThemeContext.Consumer>
-          {/* Destructuring,pulling theme out of the array */}
           {([theme]) => (
-            <button style={{ backgroundColor: theme }}>Adopt {name}</button>
+            <button
+              onClick={this.toggleModal}
+              style={{
+                backgroundColor: theme,
+              }}
+            >
+              Adopt {name}
+            </button>
           )}
         </ThemeContext.Consumer>
-        <p>{description}</p>
+        <p> {description} </p>
+        {showModal ? (
+          <Modal>
+            <div>
+              <h1>Would you like to adopt {name}?</h1>
+              <div className="buttons">
+                <button onClick={this.adopt}>Yes</button>
+                <button onClick={this.toggleModal}>No</button>
+              </div>
+            </div>
+          </Modal>
+        ) : null}
       </div>
     );
   }
@@ -58,7 +85,7 @@ class Details extends React.Component {
 export default function DetailsWithErrorBoundary(props) {
   return (
     <ErrorBoundaries>
-      <Details {...props} />
+      <Details {...props} />{" "}
     </ErrorBoundaries>
   );
 }
