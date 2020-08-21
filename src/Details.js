@@ -50,9 +50,8 @@ class Details extends React.Component {
     } = this.state;
 
     return (
-      <div className="details" onClick={console.log}>
+      <div className="details">
         <Carousel media={media} /> <h1> {name} </h1>{" "}
-        
         <h2> {`${animal} - ${breed} - ${location}`} </h2>
         <ThemeContext.Consumer>
           {([theme]) => (
@@ -85,7 +84,7 @@ class Details extends React.Component {
 export default function DetailsWithErrorBoundary(props) {
   return (
     <ErrorBoundaries>
-      <Details {...props} />{" "}
+      <Details {...props} />
     </ErrorBoundaries>
   );
 }
