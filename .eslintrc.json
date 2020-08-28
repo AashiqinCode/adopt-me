@@ -12,7 +12,8 @@
     "react/prop-types": 0,
     "no-console": 1,
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": 0
   },
 
   "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
@@ -34,4 +35,5 @@
       "version": "detect"
     }
   }
+
 }
