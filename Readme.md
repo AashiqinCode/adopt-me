@@ -5,10 +5,11 @@
 - ESLint-config-prettier
 - Parcel-Bundler
 - ESLint plugin for jsx
+- Reach Router
 
 ## Fonts and Ligatures used
 
-Fira
+Fira (https://github.com/tonsky/FiraCode)
 
 ## API Clients used
 

@@ -6,8 +6,20 @@ import { Router, Link } from "@reach/router";
 import Details from "./Details";
 import ThemeContext from "./ThemeContext";
 
+// Hooks Components
+
+// import StateComponent from "./Hooks/State";
+// import EffectComponent from "./Hooks/Effect";
+// import ContextComponent from "./Hooks/Context";
+// import RefComponent from "./Hooks/Ref";
+// import ReducerComponent from "./Hooks/Reducer";
+// import MemoCommponent from "./Hooks/Memo";
+// import CallbackComponent from "./Hooks/Callback";
+// import LayoutEffectComponent from "./Hooks/Layout";
+import ImperativeHandleComponent from "./Hooks/ImperativeHandler";
+
 const App = () => {
-  const themeHook= useState("darkblue");
+  const themeHook = useState("darkblue");
 
   return (
     <React.StrictMode>
@@ -26,4 +38,4 @@ const App = () => {
     </React.StrictMode>
   );
 };
-render(<App />, document.getElementById("root"));
+render(<ImperativeHandleComponent />, document.getElementById("root"));
