@@ -6,6 +6,7 @@
 - Parcel-Bundler
 - ESLint plugin for jsx
 - Reach Router
+- Emotion for styling(https://emotion.sh/docs/install)
 
 ## Fonts and Ligatures used
 

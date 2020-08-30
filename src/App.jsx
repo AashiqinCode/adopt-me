@@ -5,6 +5,7 @@ import SearchParams from "./SearchParams";
 import { Router, Link } from "@reach/router";
 import Details from "./Details";
 import ThemeContext from "./ThemeContext";
+import Navbar from './Navbar';
 
 // Hooks Components
 
@@ -25,9 +26,10 @@ const App = () => {
     <React.StrictMode>
       <ThemeContext.Provider value={themeHook}>
         <div>
-          <header>
+          {/* <header>
             <Link to="/">Adopt Me!</Link>
-          </header>
+          </header> */}
+          <Navbar/>
 
           <Router>
             <SearchParams path="/" />
@@ -38,4 +40,4 @@ const App = () => {
     </React.StrictMode>
   );
 };
-render(<ImperativeHandleComponent />, document.getElementById("root"));
+render(<App/>, document.getElementById("root"));
