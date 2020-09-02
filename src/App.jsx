@@ -31,22 +31,28 @@ const App = () => {
   const themeHook = useState("darkblue");
 
   return (
-    <React.StrictMode>
-      <ThemeContext.Provider value={themeHook}>
-        <div>
-          {/* <header>
+    <>
+      <React.StrictMode>
+        <ThemeContext.Provider value={themeHook}>
+          <div>
+            {/* <header>
             <Link to="/">Adopt Me!</Link>
           </header> */}
-          <Navbar />
-          <Suspense fallback={<h1>loading route...</h1>}>
-            <Router>
-              <SearchParams path="/" />
-              <Details path="/details/:id" />
-            </Router>
-          </Suspense>
-        </div>
-      </ThemeContext.Provider>
-    </React.StrictMode>
+            <Navbar />
+            <Suspense fallback={<h1>loading route...</h1>}>
+              <Router>
+                <SearchParams path="/" />
+                <Details path="/details/:id" />
+              </Router>
+            </Suspense>
+          </div>
+        </ThemeContext.Provider>
+      </React.StrictMode>
+    </>
   );
 };
-render(<App />, document.getElementById("root"));
+// render(<App />, document.getElementById("root"));
+// hydrate(<App />, document.getElementById("root"));
+
+export default App;
+
