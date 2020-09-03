@@ -5,26 +5,27 @@ import { Router, Link } from "@reach/router";
 import Details from "./Details";
 
 import { Provider } from "react-redux";
-import store from "./store";
+import { store, persistor } from "./store";
+import { PersistGate } from "redux-persist/integration/react";
 
 // Details component is not needed for the first time of the render so its lazy loaded whenever we want to called
 
 const App = () => {
   return (
-    <>
-      <Provider store={store}>
-        <div>
-          <header>
-            <Link to="/">Adopt Me!</Link>
-          </header>
-          ;
+    <Provider store={store}>
+      <div>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
+        ;
+        <PersistGate persistor={persistor}>
           <Router>
             <SearchParams path="/" />
             <Details path="/details/:id" />
           </Router>
-        </div>
-      </Provider>
-    </>
+        </PersistGate>
+      </div>
+    </Provider>
   );
 };
 render(<App />, document.getElementById("root"));

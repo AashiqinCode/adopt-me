@@ -99,8 +99,8 @@ const mapStateToProps = ({ theme, location }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setTheme: (theme) => dispatch(changeTheme(theme)),
-    // dispatch(action:<any>)
     setLocation: (location) => dispatch(changeLocation(location)),
+    // dispatch(action:<any>)
   };
 };
 
