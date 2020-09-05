@@ -5,5 +5,7 @@
             "sourceMap": false
         }
     ]],
-    "plugins": []
+    "plugins": [
+        ["@babel/plugin-proposal-class-properties", {}, "name"]
+    ]
 }

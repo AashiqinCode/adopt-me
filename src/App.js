@@ -1,8 +1,8 @@
 import React, { useState, lazy, Suspense } from "react";
-import { render } from "react-dom";
+
 // import Pet from "./Pet.jsx";
 import SearchParams from "./SearchParams";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 // import Details from "./Details";
 import ThemeContext from "./ThemeContext";
 import Navbar from "./Navbar";
@@ -55,4 +55,3 @@ const App = () => {
 // hydrate(<App />, document.getElementById("root"));
 
 export default App;
-
