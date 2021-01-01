@@ -37,7 +37,7 @@ const SearchParams = (props) => {
         const breedStrings = apiBreeds.map(({ name }) => name);
         setBreeds(breedStrings);
       },
-      console.log("Breeds Updated"),
+      // console.log("Breeds Updated"),
       (error) => console.error(error)
     );
   }, [animal, setBreed, setBreeds]);

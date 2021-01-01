@@ -20,7 +20,7 @@ class Details extends React.Component {
   componentDidMount() {
     // throw new Error("lol new");
     pet.animal(this.props.id).then(({ animal }) => {
-      console.log("The Clicked Animal: ", animal),
+      // console.log("The Clicked Animal: ", animal),
         this.setState({
           url: animal.url,
           name: animal.name,
@@ -28,7 +28,7 @@ class Details extends React.Component {
           location: `${animal.contact.address.city}, ${animal.contact.address.state}`,
           description: animal.description,
           media: animal.photos,
-          breed: animal.breed,
+          breed: animal.breeds.primary,
           loading: false,
         });
     }),
