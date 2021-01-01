@@ -11,12 +11,12 @@
 (Kindly check `package.json` file before installing for any missed other than the above mentioned)
 
   ## About The Project
-  This is done by watching the [FrontEndMaster's React Course By Brian Holt](https://frontendmasters.com/courses/complete-react-v5/). A website for finding the adoptable pets of many breeds of dogs(In only Seatle,WA location).
+  This is done by watching the [FrontEndMaster's React Course By Brian Holt](https://frontendmasters.com/courses/complete-react-v5/). A website for finding the adoptable dogs of various breeds(In only Seatle,WA location).
 
 ## API Clients used
 
 - [FrontEndMasters](https://frontendmasters.com/) Pet API.
 
-> Thank you @btholt
+> Thank you [Brian Holt](https://github.com/btholt) for this wonderful lecture!
 
 
